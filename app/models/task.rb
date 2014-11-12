@@ -3,13 +3,10 @@ class Task < ActiveRecord::Base
 
   def dump
     puts "#################### dump Start!"
-    puts Task.attribute_names
-    puts "-------------"
-    puts "-------------"
-    Task.columns.each{|col|
-      puts col.name
-      puts self.column_for_attribute(col.name)
-      }
+    self.attributes.each{ |key, val|
+      puts key
+      puts val
+    }
     puts "#################### dump End!"
   end
 end
