@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('activerecord.attributes.task.title') %></strong>
   <%= @task.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('activerecord.attributes.task.description') %></strong>
   <%= @task.description %>
 </p>
 
 <p>
-  <strong>Limit:</strong>
+  <strong><%= t('activerecord.attributes.task.limit') %></strong>
   <%= @task.limit %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong><%= t('activerecord.attributes.task.status_id') %></strong>
   <%= @task.status.name %>
 </p>
 
