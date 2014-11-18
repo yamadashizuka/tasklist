@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112025030) do
+ActiveRecord::Schema.define(version: 20141117085129) do
 
   create_table "statuses", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,6 +33,7 @@ ActiveRecord::Schema.define(version: 20141112025030) do
     t.integer  "status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "story_id"
   end
 
 end
