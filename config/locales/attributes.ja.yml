@@ -5,4 +5,8 @@ ja:
         title: タスク名
         description: 詳細
         limit: 期限
-        status_id: 状況
+        statuscode_id: 状況
+        story_id: ストーリーのひも付け
+      story:
+        title: ストーリー名
+        description: ストーリー詳細

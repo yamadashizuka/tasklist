@@ -26,8 +26,8 @@
 
 
   <div class="field">
-    <%= f.label :status_id %><br>
-    <%= f.collection_select( :status_id, Status.all, :id, :name) %>
+    <%= f.label :statuscode_id %><br>
+    <%= f.collection_select( :statuscode_id, Statuscode.all, :id, :name) %>
   </div>
 
   <div class="actions">

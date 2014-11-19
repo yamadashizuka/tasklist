@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class StatusesControllerTest < ActionController::TestCase
+class StatuscodesControllerTest < ActionController::TestCase
   setup do
-    @status = statuses(:one)
+    @status = statuscodes(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:statuses)
+    assert_not_nil assigns(:statuscodes)
   end
 
   test "should get new" do
@@ -44,6 +44,6 @@ class StatusesControllerTest < ActionController::TestCase
       delete :destroy, id: @status
     end
 
-    assert_redirected_to statuses_path
+    assert_redirected_to statuscodes_path
   end
 end

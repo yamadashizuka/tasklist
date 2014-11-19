@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117085129) do
+ActiveRecord::Schema.define(version: 20141118100026) do
 
-  create_table "statuses", force: true do |t|
+  create_table "statuscodes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20141117085129) do
     t.string   "title"
     t.text     "description"
     t.datetime "limit"
-    t.integer  "status_id"
+    t.integer  "statuscode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "story_id"
