@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class StatusesHelperTest < ActionView::TestCase
+class StatuscodesHelperTest < ActionView::TestCase
 end

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :stories
+
   root 'tasks#index'
 
   resources :tasks
 
-  resources :statuses
+  resources :statuscodes
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
