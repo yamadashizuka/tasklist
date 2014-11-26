@@ -1,6 +1,6 @@
-class CreateStatuscodes < ActiveRecord::Migration
+class CreateStatuses < ActiveRecord::Migration
   def change
-    create_table :statuscodes do |t|
+    create_table :statuses do |t|
       t.string :name
 
       t.timestamps
