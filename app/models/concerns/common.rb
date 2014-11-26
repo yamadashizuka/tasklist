@@ -26,10 +26,10 @@ module Common
     f.close
   end
 
+  LIST_OF_EXCLUSION = ["id", "created_at", "updated_at"]
   #dumpの再帰処理を行う。
   def dump_recursive (f)
 
-    LIST_OF_EXCLUSION = ["id", "created_at", "updated_at"]
 
     self.attributes.each{ |key, val|
       # 表示用の項目名に翻訳しつつ、その時の項目名を表示する。
