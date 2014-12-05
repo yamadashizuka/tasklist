@@ -15,15 +15,24 @@
 #　　　・コード値関係のクラス名はお約束として、末尾を「code」で終わるようにしてください。
 #        例：Statuscodeクラス（テーブル名はstatuscodes）
 #
+#   CTI高綱魔改造
+#　　・ファイル出力する直前でキーと値のペアをハッシュに入れる
+#    ・ハッシュをJSONにする
+#    ・標準出力に吐き出す（STDOUT.puts）
 #
 ################################################################################################
 module Common
   def dump
     f = File.open("./LV1/#{Time.now.strftime("%Y%m%d_%H%M%S")}.txt", 'w')
+    @@h = {}
 
     dump_recursive (f)
 
     f.close
+    STDOUT.puts "●●●ここから●●●"
+    STDOUT.puts(@@h.to_json)
+    STDOUT.puts "●●●ここまで●●●"
+    
   end
 
   LIST_OF_EXCLUSION = ["id", "created_at", "updated_at"]
@@ -39,12 +48,14 @@ module Common
       if key.include? "code_id"
         #末尾に「code_id」がある項目はクラスから名称を取得する。（現状name固定）
         f.puts "#{key_view} #{key.sub(/_id$/,"").classify.constantize.find(val).name}"
+        @@h.store(key_view,key.sub(/_id$/,"").classify.constantize.find(val).name)
       elsif  key.include? "_id"
         ##再帰処理
         data = key.sub(/_id$/,"").classify.constantize.find(val)
         data.dump_recursive(f) if data.present?
       else
         f.puts "#{key_view} #{val}"
+        @@h.store(key_view,val)
       end
 
     end
